@@ -22,7 +22,6 @@ import router from './router'
 // import './plugins/click-away'
 
 import './scss/app.scss';
-
 Vue.use(Antd);
 
 Vue.config.productionTip = false

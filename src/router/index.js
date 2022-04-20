@@ -30,10 +30,10 @@ let routes = [
 		component: () => import('../views/Layout.vue'),
 	},
 	{
-		path: '/tables',
-		name: 'Tables',
+		path: '/projects',
+		name: 'Projects',
 		layout: "dashboard",
-		component: () => import('../views/Tables.vue'),
+		component: () => import('../views/Projects.vue'),
 	},
 	{
 		path: '/billing',
