@@ -20,7 +20,7 @@ export default {
       // pageSizeOptions: ['4'],
       current: 1,
       pageSize: 4,
-      total: 100,
+      total: 4,
     };
   },
   methods: {

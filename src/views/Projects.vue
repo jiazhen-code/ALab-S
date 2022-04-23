@@ -72,8 +72,8 @@
     {
       key: '1',
       experiment: {
-        name: 'Soft UI Shopify Version',
-        logo: 'images/logos/logo-shopify.svg',
+        name: 'Experiment 1',
+        // logo: 'images/logos/logo-shopify.svg',
       },
       members: [ "images/face-1.jpg", "images/face-4.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
       time: '2022-4-18 20:00',
@@ -86,8 +86,8 @@
     {
       key: '2',
       experiment: {
-        name: 'Progress Track',
-        logo: 'images/logos/logo-atlassian.svg',
+        name: 'Experiment 2',
+        // logo: 'images/logos/logo-atlassian.svg',
       },
       members: [ "images/face-4.jpg", "images/face-3.jpg", ],
       time: '2022-4-18 20:00',
@@ -100,8 +100,8 @@
     {
       key: '3',
       experiment: {
-        name: 'Fix Platform Errors',
-        logo: 'images/logos/logo-slack.svg',
+        name: 'Experiment 3',
+        // logo: 'images/logos/logo-slack.svg',
       },
       members: [ "images/face-1.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
       time: '2022-4-18 20:00',
@@ -114,8 +114,8 @@
     {
       key: '4',
       experiment: {
-        name: 'Launch new Mobile App',
-        logo: 'images/logos/logo-spotify.svg',
+        name: 'Experiment 4',
+        // logo: 'images/logos/logo-spotify.svg',
       },
       members: [ "images/face-1.jpg", "images/face-2.jpg", ],
       time: '2022-4-18 20:00',
@@ -128,8 +128,8 @@
     {
       key: '5',
       experiment: {
-        name: 'Add the New Landing Page',
-        logo: 'images/logos/logo-jira.svg',
+        name: 'Experiment 5',
+        // logo: 'images/logos/logo-jira.svg',
       },
       members: [ "images/face-1.jpg", "images/face-4.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
       time: '2022-4-18 20:00',
