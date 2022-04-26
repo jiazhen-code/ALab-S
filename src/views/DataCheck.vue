@@ -8,42 +8,9 @@
 
 		<a-row type="flex" :gutter="24">
 
-			<!-- Billing Info Column -->
-			<a-col :span="24" :md="16">
-				<a-row type="flex" :gutter="24">
-					<a-col :span="24" :xl="12" class="mb-24">
 
-						<!-- Master Card -->
-						<CardCredit></CardCredit>
-						<!-- / Master Card -->
-
-					</a-col>
-					<a-col :span="12" :xl="6" class="mb-24" v-for="(salary, index) in salaries" :key="index">
-
-						<!-- Salary Card -->
-						<WidgetSalary
-							:value="salary.value"
-							:prefix="salary.prefix"
-							:icon="salary.icon"
-							:title="salary.title"
-							:content="salary.content"
-						></WidgetSalary>
-						<!-- / Salary Card -->
-
-					</a-col>
-					<a-col :span="24" class="mb-24">
-
-						<!-- Payment Methods Card -->
-						<CardPaymentMethods></CardPaymentMethods>
-						<!-- Payment Methods Card -->
-
-					</a-col>
-				</a-row>
-			</a-col>
-			<!-- / Billing Info Column -->
-			
 			<!-- Invoices Column -->
-			<a-col :span="24" :md="8" class="mb-24">
+			<a-col :span="24" :md="24" class="mb-24">
 
 				<!-- Invoices Card -->
 				<CardInvoices
@@ -59,7 +26,7 @@
 		<a-row type="flex" :gutter="24">
 
 			<!-- Billing Information Column -->
-			<a-col :span="24" :md="16" class="mb-24">
+			<a-col :span="12" :md="12" class="mb-24">
 
 				<!-- Billing Information Card -->
 				<CardBillingInfo></CardBillingInfo>
@@ -69,7 +36,7 @@
 			<!-- Billing Information Column -->
 
 			<!-- Your Transactions Column -->
-			<a-col :span="24" :md="8" class="mb-24">
+			<a-col :span="24" :md="12" class="mb-24">
 
 				<!-- Your Transactions Card -->
 				<CardTransactions
@@ -86,20 +53,16 @@
 </template>
 
 <script>
-
-	import CardCredit from "../components/Cards/CardCredit"
-	import WidgetSalary from "../components/Widgets/WidgetSalary"
 	import CardPaymentMethods from "../components/Cards/CardPaymentMethods"
 	import CardInvoices from "../components/Cards/CardInvoices"
 	import CardBillingInfo from "../components/Cards/CardBillingInfo"
 	import CardTransactions from "../components/Cards/CardTransactions"
 
-
 	// Salary cards data
 	const salaries = [
 		{
 			value: 2000,
-			prefix: "+$",
+			prefix: "+#",
 			icon: `
 										<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
 											<g id="bank" transform="translate(0.75 0.75)">
@@ -124,88 +87,57 @@
 	// "Invoices" list data.
 	const invoiceData = [
 		{
-			title: "March, 01, 2021",
-			code: "#MS-415646",
-			amount: "180",
+			title: "实验1",
+			time: "实验时间1970-01-01",
+			SN: "数据编号",
 		},
 		{
-			title: "February, 12, 2021",
-			code: "#RV-126749",
-			amount: "250",
+			title: "实验2",
+			time: "实验时间1970-01-01",
+			SN: "数据编号",
 		},
 		{
-			title: "April, 05, 2020",
-			code: "#FB-212562",
-			amount: "550",
+			title: "实验3",
+			time: "实验时间1970-01-01",
+			SN: "数据编号",
 		},
-		{
-			title: "June, 25, 2019",
-			code: "#QW-103578",
-			amount: "400",
-		},
-		{
-			title: "March, 03, 2019",
-			code: "#AR-803481",
-			amount: "700",
-		},
+
 	] ;
 
 	// "Your Transactions" list data.
 	const transactionsData = [
 		{
-			period: "NEWEST",
+			period: "正在进行",
 		},
 		{
-			title: "Netflix",
+			title: "工序1",
 			datetime: "27 March 2021, at 12:30 PM",
-			amount: "2,500",
-			type: -1,// 0 is for pending, 1 is for deposit, -1 is for withdrawal.
+			amount: "21",
+			type: 1,// 0 is for pending, 1 is for deposit, -1 is for withdrawal.
+			status: 'processing',
+		},
+		{
+			period: "已完成",
+		},
+		{
+			title: "工序2",
+			datetime: "26 March 2021, at 12:30 AM",
+			amount: "100",
+			type: 1,
+			status: 'success',
+		},
+		{
+			title: "工序3",
+			datetime: "26 March 2021, at 11:30 AM",
+			amount: "33",
+			type: -1,
 			status: 'danger',
 		},
-		{
-			title: "Apple",
-			datetime: "27 March 2021, at 04:30 AM",
-			amount: "2,000",
-			type: 1,
-			status: 'success',
-		},
-		{
-			period: "YESTERDAY",
-		},
-		{
-			title: "Stripe",
-			datetime: "26 March 2021, at 12:30 AM",
-			amount: "750",
-			type: 1,
-			status: 'success',
-		},
-		{
-			title: "HubSpot",
-			datetime: "26 March 2021, at 11:30 AM",
-			amount: "1,050",
-			type: 1,
-			status: 'success',
-		},
-		{
-			title: "Creative Tim",
-			datetime: "26 March 2021, at 07:30 AM",
-			amount: "2,400",
-			type: 1,
-			status: 'success',
-		},
-		{
-			title: "Webflow",
-			datetime: "26 March 2021, at 04:00 AM",
-			amount: "Pending",
-			type: 0,
-			status: 'warning',
-		},
+
 	] ;
 
 	export default ({
 		components: {
-			CardCredit,
-			WidgetSalary,
 			CardPaymentMethods,
 			CardInvoices,
 			CardBillingInfo,
