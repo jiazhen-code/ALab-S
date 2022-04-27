@@ -186,7 +186,6 @@ export default {
   methods:{
     export_html(){
       // alert(123123)
-
       dataToImport[this.content_id] = this.editor.export()
       this.data_import = dataToImport[this.content_id]
       console.log(this.data_import)
