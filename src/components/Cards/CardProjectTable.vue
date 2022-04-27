@@ -4,7 +4,7 @@
 	<a-card :bordered="false" class="header-solid h-full" :bodyStyle="{padding: 0,}">
 
     <div class="table-upload-btn">
-      <a-button type="dashed" block>
+      <a-button type="dashed" block @click="onCreateExp">
         <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M3 17C3 16.4477 3.44772 16 4 16H16C16.5523 16 17 16.4477 17 17C17 17.5523 16.5523 18 16 18H4C3.44772 18 3 17.5523 3 17ZM6.29289 6.70711C5.90237 6.31658 5.90237 5.68342 6.29289 5.29289L9.29289 2.29289C9.48043 2.10536 9.73478 2 10 2C10.2652 2 10.5196 2.10536 10.7071 2.29289L13.7071 5.29289C14.0976 5.68342 14.0976 6.31658 13.7071 6.70711C13.3166 7.09763 12.6834 7.09763 12.2929 6.70711L11 5.41421L11 13C11 13.5523 10.5523 14 10 14C9.44771 14 9 13.5523 9 13L9 5.41421L7.70711 6.70711C7.31658 7.09763 6.68342 7.09763 6.29289 6.70711Z" fill="#111827"/>
         </svg>
@@ -63,6 +63,7 @@
         </a-popconfirm>
         <a-button shape="circle" icon="edit" @click="onEditFlow(record.key)" ></a-button>
         </a-space>
+        <Modal ref="modal" :addData="addDataSource"></Modal>
       </template>
 <!--      <template>-->
 <!--        &lt;!&ndash;        <a-button shape="circle" icon="search" />&ndash;&gt;-->
@@ -79,8 +80,12 @@
 </template>
 
 <script>
-
+  import Modal from "@/components/Modal/Modal"
+  import moment from 'moment'
 	export default ({
+    components: {
+      Modal
+    },
 		props: {
 			dataSource: {
 				type: Array,
@@ -104,6 +109,9 @@
 			}
 		},
     methods: {
+      onCreateExp(){
+        this.$refs.modal.showModal()
+      },
       onEditFlow(id){
         this.changeChartData(id)
       },
@@ -125,16 +133,32 @@
           this.dataSource = dataSource;
         }
       },
-      handleAdd() {
-        const { count, dataSource } = this;
-        const newData = {
-          key: count,
-          name: `Edward King ${count}`,
-          age: 32,
-          address: `London, Park Lane no. ${count}`,
-        };
-        this.dataSource = [...dataSource, newData];
-        this.count = count + 1;
+      addDataSource(name, members){
+        let mems = [];
+        members.forEach((item) => {
+          mems.push("images/face-"+ item + ".jpg")
+        })
+
+        const new_data = {
+              key: this.dataSource.length+1,
+              experiment: {
+                name: name,
+                // logo: 'images/logos/logo-slack.svg',
+              },
+              members: mems,
+              time: moment(new Date()).format("yyyy-MM-DD HH:mm"),
+              completion: {
+                label: 'stop',
+                status: 'exception',
+                value: 1,
+              },
+            }
+
+        const dataSource = [...this.dataSource, new_data];
+        console.log(        new_data)
+
+        this.dataSource.push(new_data);
+
       },
     },
 	})
