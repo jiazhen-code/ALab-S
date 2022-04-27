@@ -16,7 +16,7 @@ let routes = [
 	},
 	{
 		path: '/equipment',
-		name: 'Equipment',
+		name: '设备管理',
 		layout: "dashboard",
 		// route level code-splitting
 		// this generates a separate chunk (about.[hash].js) for this route
@@ -31,24 +31,21 @@ let routes = [
 	},
 	{
 		path: '/projects',
-		name: 'Projects',
+		name: '实验管理',
 		layout: "dashboard",
 		component: () => import('../views/Projects.vue'),
 	},
 	{
-		path: '/billing',
-		name: 'Billing',
+		path: '/DataCheck',
+		name: '数据查询',
 		layout: "dashboard",
-		component: () => import('../views/Billing.vue'),
+		component: () => import('../views/DataCheck.vue'),
 	},
 	{
-		path: '/rtl',
-		name: 'RTL',
-		layout: "dashboard-rtl",
-		meta: {
-			layoutClass: 'dashboard-rtl',
-		},
-		component: () => import('../views/RTL.vue'),
+		path: '/DataAnalysis',
+		name: '数据分析',
+		layout: "dashboard",
+		component: () => import('../views/DataAnalysis.vue'),
 	},
 	// {
 	// 	path: '/Profile',
