@@ -78,7 +78,7 @@
         // logo: 'images/logos/logo-shopify.svg',
       },
       members: [ "images/face-1.jpg", "images/face-4.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
-      time: '2022-4-18 20:00',
+      time: '2022-04-18 20:00',
       completion: {
         label: '24%',
         status: 'normal',
@@ -92,7 +92,7 @@
         // logo: 'images/logos/logo-atlassian.svg',
       },
       members: [ "images/face-4.jpg", "images/face-3.jpg", ],
-      time: '2022-4-18 20:00',
+      time: '2022-04-18 20:00',
       completion: {
         label: '60%',
         status: 'normal',
@@ -106,7 +106,7 @@
         // logo: 'images/logos/logo-slack.svg',
       },
       members: [ "images/face-1.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
-      time: '2022-4-18 20:00',
+      time: '2022-04-18 20:00',
       completion: {
         label: '100%',
         status: 'success',
