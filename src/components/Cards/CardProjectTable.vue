@@ -26,7 +26,7 @@
 <!--				</a-col>-->
 			</a-row>
 		</template>
-		<a-table :columns="columns" :data-source="dataSource" :pagination="false">
+		<a-table :columns="columns" :data-source="dataSource" :pagination="true">
 
 			<a-space slot="members" slot-scope="members" :size="-12" class="avatar-chips">
 				<template v-for="member in members">
@@ -61,7 +61,7 @@
         >
           <a-button shape="circle" icon="pause" type="danger" href="javascript:;"></a-button>
         </a-popconfirm>
-        <a-button shape="circle" icon="edit" href="javascript:;"></a-button>
+        <a-button shape="circle" icon="edit" @click="onEditFlow(record.key)" ></a-button>
         </a-space>
       </template>
 <!--      <template>-->
@@ -90,6 +90,11 @@
 				type: Array,
 				default: () => [],
 			},
+      changeChartData:{
+        type: Function,
+        require: true,
+        default: null,
+      }
 		},
 		data() {
 			return {
@@ -99,6 +104,9 @@
 			}
 		},
     methods: {
+      onEditFlow(id){
+        this.changeChartData(id)
+      },
       onCellChange(key, dataIndex, value) {
         const dataSource = [...this.dataSource];
         const target = dataSource.find(item => item.key === key);
@@ -109,7 +117,13 @@
       },
       onDelete(key) {
         const dataSource = [...this.dataSource];
-        this.dataSource = dataSource.filter(item => item.key !== key);
+        // this.dataSource = dataSource.filter(item => item.key !== key);
+        const target = dataSource.find(item => item.key === key);
+        if (target) {
+          target['completion'].label = '暂停';
+          target['completion'].status = 'exception'
+          this.dataSource = dataSource;
+        }
       },
       handleAdd() {
         const { count, dataSource } = this;

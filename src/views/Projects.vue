@@ -13,7 +13,7 @@
       <a-col :span="24" class="mb-24">
 
         <!-- Projects Table Column -->
-        <CardProjectTable
+        <CardProjectTable :changeChartData="changeFlowData"
             :dataSource="tableData"
             :columns="tableColumns"
         ></CardProjectTable>
@@ -24,7 +24,9 @@
 
     </a-row>
     <a-row>
-      <Flow></Flow>
+      <Flow ref="flow">
+
+      </Flow>
     </a-row>
 	</div>
 </template>
@@ -70,7 +72,7 @@
   // "Projects" table list of rows and their properties.
   const tableData = [
     {
-      key: '1',
+      key: 1,
       experiment: {
         name: 'Experiment 1',
         // logo: 'images/logos/logo-shopify.svg',
@@ -84,7 +86,7 @@
       },
     },
     {
-      key: '2',
+      key: 2,
       experiment: {
         name: 'Experiment 2',
         // logo: 'images/logos/logo-atlassian.svg',
@@ -98,7 +100,7 @@
       },
     },
     {
-      key: '3',
+      key: 3,
       experiment: {
         name: 'Experiment 3',
         // logo: 'images/logos/logo-slack.svg',
@@ -111,34 +113,34 @@
         value: 100,
       },
     },
-    {
-      key: '4',
-      experiment: {
-        name: 'Experiment 4',
-        // logo: 'images/logos/logo-spotify.svg',
-      },
-      members: [ "images/face-1.jpg", "images/face-2.jpg", ],
-      time: '2022-4-18 20:00',
-      completion: {
-        label: '100%',
-        status: 'success',
-        value: 100,
-      },
-    },
-    {
-      key: '5',
-      experiment: {
-        name: 'Experiment 5',
-        // logo: 'images/logos/logo-jira.svg',
-      },
-      members: [ "images/face-1.jpg", "images/face-4.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
-      time: '2022-4-18 20:00',
-      completion: {
-        label: 'error',
-        status: 'exception',
-        value: 100,
-      },
-    },
+    // {
+    //   key: '4',
+    //   experiment: {
+    //     name: 'Experiment 4',
+    //     // logo: 'images/logos/logo-spotify.svg',
+    //   },
+    //   members: [ "images/face-1.jpg", "images/face-2.jpg", ],
+    //   time: '2022-4-18 20:00',
+    //   completion: {
+    //     label: '100%',
+    //     status: 'success',
+    //     value: 100,
+    //   },
+    // },
+    // {
+    //   key: '5',
+    //   experiment: {
+    //     name: 'Experiment 5',
+    //     // logo: 'images/logos/logo-jira.svg',
+    //   },
+    //   members: [ "images/face-1.jpg", "images/face-4.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
+    //   time: '2022-4-18 20:00',
+    //   completion: {
+    //     label: 'error',
+    //     status: 'exception',
+    //     value: 100,
+    //   },
+    // },
     // {
     // 	key: '6',
     //   experiment: {
@@ -154,7 +156,6 @@
     // 	},
     // },
   ];
-
 	export default ({
 		components: {
 			CardProjectTable,
@@ -164,11 +165,15 @@
 			return {
 				// Associating "Authors" table data with its corresponding property.
 				tableData: tableData,
-
 				// Associating "Authors" table columns with its corresponding property.
-				tableColumns: tableColumns
+				tableColumns: tableColumns,
 			}
 		},
+    methods:{
+      changeFlowData(id){
+        this.$refs.flow.changeChartData(id)
+      }
+    }
 	})
 
 </script>
