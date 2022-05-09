@@ -36,7 +36,7 @@
             :usage="1"
             :price="10000"
             :number="1"
-            :imgPath="'images/img_1.png'"></CardInfo>
+            :imgPath="'static/images//img_1.png'"></CardInfo>
 				<!-- / Information Card 1 -->
 
 			</a-col>
@@ -54,7 +54,7 @@
           :usage="2"
           :price="10000"
           :number="2"
-          :imgPath="'images/img_2.png'"
+          :imgPath="'static/images//img_2.png'"
         ></CardInfo>
         <!-- / Information Card 1 -->
 
@@ -75,7 +75,7 @@
             :usage="4"
             :price="10000"
             :number="2"
-            :imgPath="'images/img_3.png'"></CardInfo>
+            :imgPath="'static/images//img_3.png'"></CardInfo>
         <!-- / Information Card 1 -->
 
       </a-col>
@@ -89,7 +89,7 @@
             :usage="4"
             :price="10000"
             :number="13"
-            :imgPath="'images/img_4.png'"></CardInfo>
+            :imgPath="'static/images//img_4.png'"></CardInfo>
         <!-- / Information Card 1 -->
 
       </a-col>

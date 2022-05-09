@@ -75,9 +75,9 @@
       key: 1,
       experiment: {
         name: 'Experiment 1',
-        // logo: 'images/logos/logo-shopify.svg',
+        // logo: 'static/images//logos/logo-shopify.svg',
       },
-      members: [ "images/face-1.jpg", "images/face-4.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
+      members: [ "static/images/face-1.jpg", "static/images/face-4.jpg", "static/images/face-2.jpg", "static/images/face-3.jpg", ],
       time: '2022-04-18 20:00',
       completion: {
         label: '24%',
@@ -89,9 +89,9 @@
       key: 2,
       experiment: {
         name: 'Experiment 2',
-        // logo: 'images/logos/logo-atlassian.svg',
+        // logo: 'static/images//logos/logo-atlassian.svg',
       },
-      members: [ "images/face-4.jpg", "images/face-3.jpg", ],
+      members: [ "static/images/face-4.jpg", "static/images/face-3.jpg", ],
       time: '2022-04-18 20:00',
       completion: {
         label: '60%',
@@ -103,9 +103,9 @@
       key: 3,
       experiment: {
         name: 'Experiment 3',
-        // logo: 'images/logos/logo-slack.svg',
+        // logo: 'static/images//logos/logo-slack.svg',
       },
-      members: [ "images/face-1.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
+      members: [ "static/images/face-1.jpg", "static/images/face-2.jpg", "static/images/face-3.jpg", ],
       time: '2022-04-18 20:00',
       completion: {
         label: '100%',
@@ -117,9 +117,9 @@
     //   key: '4',
     //   experiment: {
     //     name: 'Experiment 4',
-    //     // logo: 'images/logos/logo-spotify.svg',
+    //     // logo: 'static/images//logos/logo-spotify.svg',
     //   },
-    //   members: [ "images/face-1.jpg", "images/face-2.jpg", ],
+    //   members: [ "static/images/face-1.jpg", "static/images/face-2.jpg", ],
     //   time: '2022-4-18 20:00',
     //   completion: {
     //     label: '100%',
@@ -131,9 +131,9 @@
     //   key: '5',
     //   experiment: {
     //     name: 'Experiment 5',
-    //     // logo: 'images/logos/logo-jira.svg',
+    //     // logo: 'static/images//logos/logo-jira.svg',
     //   },
-    //   members: [ "images/face-1.jpg", "images/face-4.jpg", "images/face-2.jpg", "images/face-3.jpg", ],
+    //   members: [ "static/images/face-1.jpg", "static/images/face-4.jpg", "static/images/face-2.jpg", "static/images/face-3.jpg", ],
     //   time: '2022-4-18 20:00',
     //   completion: {
     //     label: 'error',
@@ -145,9 +145,9 @@
     // 	key: '6',
     //   experiment: {
     // 		name: 'Redesign Online Store',
-    // 		logo: 'images/logos/logo-invision.svg',
+    // 		logo: 'static/images//logos/logo-invision.svg',
     // 	},
-    // 	members: [ "images/face-1.jpg", "images/face-4.jpg", "images/face-3.jpg", ],
+    // 	members: [ "static/images/face-1.jpg", "static/images/face-4.jpg", "static/images/face-3.jpg", ],
     // 	budget: '$2,000',
     // 	completion: {
     // 		label: 'Cancelled',

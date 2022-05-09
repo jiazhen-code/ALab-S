@@ -1,5 +1,8 @@
 module.exports = {
 	runtimeCompiler: true,
+	// publicPath: 'static/',
+	// publicPath: '/',
+	assetsDir: 'static/',
 
 	chainWebpack: config => {
 		config

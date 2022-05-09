@@ -136,14 +136,14 @@
       addDataSource(name, members){
         let mems = [];
         members.forEach((item) => {
-          mems.push("images/face-"+ item + ".jpg")
+          mems.push("static/images/face-"+ item + ".jpg")
         })
 
         const new_data = {
               key: this.dataSource.length+1,
               experiment: {
                 name: name,
-                // logo: 'images/logos/logo-slack.svg',
+                // logo: 'static/images//logos/logo-slack.svg',
               },
               members: mems,
               time: moment(new Date()).format("yyyy-MM-DD HH:mm"),

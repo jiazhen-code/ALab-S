@@ -192,9 +192,10 @@ export default {
     },
     changeChartData(content_id){
       this.content_id = content_id-1;
-      while (this.content_id >= this.data_import.length)
+      while (this.content_id >= this.dataToImport.length)
+      {
         this.dataToImport.push('')
-
+      }
 
       this.data_import = this.dataToImport[this.content_id]
       this.drawChart()
